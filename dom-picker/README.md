@@ -1,0 +1,1 @@
+Displays DOM item details (unique selector, path, id, class name) when mousing over it.

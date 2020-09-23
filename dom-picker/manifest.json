@@ -1,0 +1,52 @@
+{
+  /* "background": {
+      "scripts": [ "background.js" ]
+   },*/
+  // 会一直常驻的后台JS或后台页面
+  "background": {
+    // 2种指定方式，如果指定JS，那么会自动生成一个背景页
+    //"page": "background.html"
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Element Picker"
+  },
+  "content_scripts": [
+    {
+      "css": [
+        "styleskb.css"
+      ],
+      "js": [
+        "jquery-3.1.1.min.js",
+        "jquery-ui.min.js",
+        "jquery_extenstion.js",
+        "clipboard.min.js",
+        "selector-generator.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "description": "Displays DOM item details (unique selector, path, id, class name) when mousing over it.",
+  "icons": {
+    "128": "icon128.png",
+    "48": "icon48.png"
+  },
+  "manifest_version": 2,
+  "name": "Element Picker",
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "storage",
+    "activeTab",
+     "clipboardWrite"
+  ],
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "1.6"
+}
